@@ -1,6 +1,8 @@
 ﻿using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
+using NorthwoodLib;
 using System;
+using System.Linq;
 
 namespace RolePlayDoorInteraction
 {
@@ -10,8 +12,8 @@ namespace RolePlayDoorInteraction
         {
             if (Plugin.Instance.Config.WhiteList.Contains(ev.Door.Type))
                 return;
-
-            ev.CanInteract = ev.Collider.ToString().Contains("TouchScreenPanel");
+            string interactablepart = ev.Collider.ToString();
+            ev.CanInteract = Plugin.Instance.Config.InteractablePart.Any(x => x.Contains(interactablepart));
         }
     }
 }
