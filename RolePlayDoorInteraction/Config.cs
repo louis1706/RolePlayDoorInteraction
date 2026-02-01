@@ -14,7 +14,10 @@ namespace RolePlayDoorInteraction
         public bool Debug { get; set; }
 
         [Description("What DoorType this plugin will not affecting.")]
-        public List<DoorType> WhiteList { get; set; } = new() { DoorType.Airlock, DoorType.PrisonDoor, DoorType.HeavyBulkDoor, DoorType.Scp173Gate, DoorType.Scp173NewGate, };
+        public List<DoorType> WhiteListDoor { get; set; } = new() { DoorType.Airlock, DoorType.PrisonDoor, DoorType.HeavyBulkDoor, DoorType.Scp173Gate, DoorType.Scp173NewGate, };
+
+        [Description("What Room this plugin will not affecting.")]
+        public List<RoomType> WhiteListRoom { get; set; } = new() { RoomType.LczAirlock, };
 
         [Description("What interactable part of the door can be used.")]
         public List<string> InteractablePart { get; set; } = new() { "Button", "TouchScreenPanel" };

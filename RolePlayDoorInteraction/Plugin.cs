@@ -20,7 +20,6 @@ namespace RolePlayDoorInteraction
             Instance = this;
             _handlers = new EventHandlers();
             Exiled.Events.Handlers.Player.InteractingDoor += _handlers.OnInteractingDoor;
-
             base.OnEnabled();
         }
 
