@@ -26,6 +26,6 @@
     <Reference Include="UnityEngine.CoreModule" HintPath="$(EXILED_REFERENCES)\UnityEngine.CoreModule.dll" Private="false" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ExMod.Exiled" Version="9.5.0" />
+    <PackageReference Include="ExMod.Exiled" Version="9.12.6" />
   </ItemGroup>
 </Project>

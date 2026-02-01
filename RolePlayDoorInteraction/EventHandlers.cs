@@ -10,10 +10,13 @@ namespace RolePlayDoorInteraction
     {
         public void OnInteractingDoor(InteractingDoorEventArgs ev)
         {
+            Log.Debug("DoorType:"+ ev.Door.Type);
             if (Plugin.Instance.Config.WhiteList.Contains(ev.Door.Type))
                 return;
             string interactablepart = ev.Collider.ToString();
-            ev.CanInteract = Plugin.Instance.Config.InteractablePart.Any(x => x.Contains(interactablepart));
+            Log.Debug("interactablepart:" + interactablepart);
+            ev.CanInteract = Plugin.Instance.Config.InteractablePart.Any(interactablepart.Contains);
+            Log.Debug("CanInteract:" + ev.CanInteract);
         }
     }
 }
