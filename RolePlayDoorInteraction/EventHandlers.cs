@@ -31,9 +31,6 @@ namespace RolePlayDoorInteraction
             else if (config.WhiteListRole.Contains(ev.Player.Role.Type))
                 return;
 
-            if (config.WhiteListDoor.Contains(ev.Door.Type))
-                return;
-
             Log.Debug($"DoorType: {ev.Door.Type}");
 
             if (config.WhiteListDoor.Contains(ev.Door.Type))
