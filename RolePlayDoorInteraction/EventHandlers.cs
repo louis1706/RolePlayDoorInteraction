@@ -24,9 +24,9 @@ namespace RolePlayDoorInteraction
             if (config.WhiteListRoom.Contains(currentRoom))
                 return;
 
-            string interactablepart = ev.Collider.ToString();
+            string interactablepart = ev.Collider?.ToString();
             Log.Debug("Interactablepart:" + interactablepart);
-            if (config.InteractablePart.Any(interactablepart.Contains))
+            if (string.IsNullOrWhiteSpace(interactablepart) || config.InteractablePart.Any(interactablepart.Contains))
                 return;
 
             ev.CanInteract = false;
