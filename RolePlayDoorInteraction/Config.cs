@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Interfaces;
+using PlayerRoles;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -18,6 +19,12 @@ namespace RolePlayDoorInteraction
 
         [Description("What Room this plugin will not affecting.")]
         public List<RoomType> WhiteListRoom { get; set; } = new() { RoomType.LczAirlock, };
+
+        [Description("What Room this plugin will not affecting.")]
+        public List<RoleTypeId> WhiteListRole { get; set; } = new() { RoleTypeId.Tutorial, };
+
+        [Description("What Room this plugin will not affecting.")]
+        public List<uint> WhiteListCustomRole { get; set; } = new() { 0U, };
 
         [Description("What interactable part of the door can be used.")]
         public List<string> InteractablePart { get; set; } = new() { "Button", "TouchScreenPanel" };
